@@ -9,16 +9,25 @@ import android.view.WindowManager;
 public class AppConstants {
     static BitmapBank bitmapBank;
     static GameEngine gameEngine;
+    static Context context;
     static int SCREEN_WIDTH,SCREEN_HEIGHT,gravity,VELOCITY_WHEN_JUMPED
             ,gapBetweenTopAndBottomTubes,numberOfTubes,
     tubeVelocity,minTubeOffSetY,maxTubeOffSetY,distanceBetweenTubes;
+    static  SoundBank soundBank;
+
 
     public static  void  initialization(Context context){
         setScreenSize(context);
+        setGameConstants();
         bitmapBank=new BitmapBank(context.getResources());
         gameEngine=new GameEngine();
-       setGameConstants();
+        soundBank=new SoundBank(context);
+
        Log.e("tube",AppConstants.numberOfTubes+"");
+    }
+
+    public static SoundBank getSoundBank() {
+        return soundBank;
     }
 
     public static void setGameConstants(){

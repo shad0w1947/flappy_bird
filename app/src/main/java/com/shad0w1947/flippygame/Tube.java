@@ -5,10 +5,21 @@ import java.util.Random;
 public class Tube {
     private int tubeX,topTubeOffSetY;
     private  Random random;
+    private int tubeColor;
+
+
     public Tube(int tubeX,int topTubeOffSetY){
         this.tubeX=tubeX;
         this.topTubeOffSetY=topTubeOffSetY;
         random=new Random();
+    }
+
+    public void setTubeColor() {
+        this.tubeColor = random.nextInt(2);
+    }
+
+    public int getTubeColor() {
+        return tubeColor;
     }
 
     public int getTopTubeOffSetY() {
